@@ -1,0 +1,3 @@
+add_lunch_combo rk3328_box-eng
+add_lunch_combo rk3328_box-userdebug
+add_lunch_combo rk3328_box-user
