@@ -74,7 +74,7 @@ fi
 # copy images to rockdev
 echo "copy u-boot images"
 cp u-boot/uboot.img $IMAGE_PATH/
-cp u-boot/RK322XMiniLoaderAll* $IMAGE_PATH/
+cp u-boot/RK322XHMiniLoaderAll* $IMAGE_PATH/
 cp u-boot/trust.img $IMAGE_PATH/
 
 echo "copy kernel images"
