@@ -35,6 +35,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/rockchip/rk3328/110b0030_pwm.kl:system/usr/keylayout/110b0030_pwm.kl\
+	device/rockchip/rk3328/ff1b0030_pwm.kl:system/usr/keylayout/ff1b0030_pwm.kl \
 	$(LOCAL_PATH)/audio_policy_rk3328.conf:system/etc/audio_policy.conf
 
 # setup dalvik vm configs.
