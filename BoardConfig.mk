@@ -47,5 +47,15 @@ MALLOC_SVELTE := true
 
 GRAPHIC_MEMORY_PROVIDER := dma_buf
 
-//MAX-SIZE=1200M, for generate out/.../system.img
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1258291200
+//MAX-SIZE=800M, for generate out/.../system.img
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838860800
+
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    WITH_DEXPREOPT := true
+  else
+    WITH_DEXPREOPT := false
+  endif
+endif
+
