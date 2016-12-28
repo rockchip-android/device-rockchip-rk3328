@@ -15,6 +15,7 @@
 #
 
 $(call inherit-product, $(LOCAL_PATH)/rk3328.mk)
+$(call inherit-product, device/rockchip/common/tv/tv_base.mk)
 
 PRODUCT_NAME := rk3328_box
 PRODUCT_DEVICE := rk3328_box
