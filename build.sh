@@ -73,25 +73,28 @@ fi
 
 # copy images to rockdev
 echo "copy u-boot images"
-cp u-boot/uboot.img $IMAGE_PATH/
-cp u-boot/RK322XHMiniLoaderAll* $IMAGE_PATH/
-cp u-boot/trust.img $IMAGE_PATH/
+#cp u-boot/uboot.img $IMAGE_PATH/
+#cp u-boot/RK322XHMiniLoaderAll* $IMAGE_PATH/
+#cp u-boot/trust.img $IMAGE_PATH/
 
 echo "copy kernel images"
-cp kernel/resource.img $IMAGE_PATH/
-cp kernel/kernel.img $IMAGE_PATH/
+#cp kernel/resource.img $IMAGE_PATH/
+#cp kernel/kernel.img $IMAGE_PATH/
 
 echo "copy manifest.xml"
 cp manifest.xml $IMAGE_PATH/manifest_${DATE}.xml
 
-#cd RKTools/linux/Linux_Pack_Firmware/rockdev && ./mkupdate.sh
-#if [ $? -eq 0 ]; then
-#    echo "Make update image ok!"
-#else
-#    echo "Make update image failed!"
-#    exit 1
-#fi
-#cd -
+echo "Make update.img"
+cp RKTools/linux/Linux_Pack_Firmware/rockdev/* $IMAGE_PATH
+cd $IMAGE_PATH && mkdir Image && ./mkupdate.sh
+if [ $? -eq 0 ]; then
+    echo "Make update image ok!"
+else
+    echo "Make update image failed!"
+    exit 1
+fi
+rm Image -rf
+cd -
 
 mkdir -p $STUB_PATH
 
