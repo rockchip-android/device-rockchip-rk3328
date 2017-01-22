@@ -50,6 +50,8 @@ GRAPHIC_MEMORY_PROVIDER := dma_buf
 //MAX-SIZE=800M, for generate out/.../system.img
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1008860800
 
+DEVICE_PACKAGE_OVERLAYS += device/rockchip/rk3328/overlay
+
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),user)
