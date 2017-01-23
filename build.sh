@@ -47,10 +47,13 @@ else
     exit 1
 fi
 
+# build wifi ko
+echo "Start build wifi ko"
+lunch rk3328_box-userdebug
+source device/rockchip/common/build_wifi_ko.sh
 
 # build android
 echo "start build android"
-lunch rk3328_box-userdebug
 make installclean
 make -j12
 if [ $? -eq 0 ]; then
