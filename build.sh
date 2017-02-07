@@ -1,4 +1,37 @@
 #!/bin/bash
+usage()
+{
+    echo "USAGE: [-o] [-u] [-v VERSION_NAME]"
+    echo "No ARGS means use default build option"
+    echo "WHERE: -o = generate ota package       "
+    echo "       -u = generate update.img        "
+    echo "       -v = set build version name for output image folder"
+    exit 1
+}
+
+BUILD_UPDATE_IMG=false
+BUILD_OTA=false
+BUILD_VERSION="IMAGES"
+
+# check pass argument
+while getopts "ouv:" arg
+do
+    case $arg in
+        o)
+            echo "will build ota package"
+            BUILD_OTA=true
+            ;;
+        u)
+            echo "will build update.img"
+            BUILD_UPDATE_IMG=true
+            ;;
+        v)
+            BUILD_VERSION=$OPTARG
+            ;;
+        ?)
+            usage ;;
+    esac
+done
 
 source build/envsetup.sh >/dev/null && setpaths
 TARGET_PRODUCT=`get_build_var TARGET_PRODUCT`
@@ -72,6 +105,17 @@ else
     echo "Make image failed!"
     exit 1
 fi
+
+if [ "$BUILD_OTA" = true ] ; then
+    INTERNAL_OTA_PACKAGE_OBJ_TARGET=obj/PACKAGING/target_files_intermediates/$TARGET_PRODUCT-target_files-*.zip
+    INTERNAL_OTA_PACKAGE_TARGET=$TARGET_PRODUCT-ota-*.zip
+    echo "generate ota package"
+    make otapackage -j4
+    ./mkimage.sh ota
+    cp $OUT/$INTERNAL_OTA_PACKAGE_TARGET $IMAGE_PATH/
+    cp $OUT/$INTERNAL_OTA_PACKAGE_OBJ_TARGET $IMAGE_PATH/
+fi
+
 #cp -f $IMAGE_PATH/* $PACK_TOOL_DIR/rockdev/Image/
 
 # copy images to rockdev
