@@ -46,3 +46,4 @@ ro.factory.tool=0
 ro.sf.lcd_density=160
 ro.adb.secure =0
 sys.hwc.enable=1
+sf.power.control=0
