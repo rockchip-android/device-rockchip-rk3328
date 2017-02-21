@@ -43,3 +43,5 @@ ro.factory.tool=0
 ro.sf.lcd_density=240
 ro.adb.secure=0
 sys.hwc.enable=1
+#set wifi contry code
+ro.boot.wificountrycode=CN
