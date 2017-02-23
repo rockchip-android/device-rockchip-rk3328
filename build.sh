@@ -43,9 +43,9 @@ export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 # source environment and chose target product
 DEVICE=`get_build_var TARGET_PRODUCT`
 BUILD_VARIANT=`get_build_var TARGET_BUILD_VARIANT`
-UBOOT_DEFCONFIG=rk322xh_box_defconfig
-KERNEL_DEFCONFIG=rk322xh_android-7.1_defconfig
-KERNEL_DTS=rk3228h-evb
+UBOOT_DEFCONFIG=rk3328_box_defconfig
+KERNEL_DEFCONFIG=rockchip_smp_nougat_defconfig
+KERNEL_DTS=rk3328-evb
 PACK_TOOL_DIR=RKTools/linux/Linux_Pack_Firmware
 IMAGE_PATH=rockdev/Image-$TARGET_PRODUCT
 export PROJECT_TOP=`gettop`
