@@ -11,7 +11,7 @@
 /dev/block/platform/ff520000.rksdmmc/by-name/userdata       /data               ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard,errors=panic   wait,check,encryptable=/metadata/key_file
 /dev/block/platform/ff520000.rksdmmc/by-name/misc           /misc               emmc      defaults      defaults
 
-/devices/ff500000.rksdmmc/mmc_host*         auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/ff500000.rksdmmc/mmc_host*         auto  auto    defaults        voldmanaged=sdcard1:auto
 
 # non box product,configuration to the first item, will filter out left
 # ff580000:usb20_otg, ff5c0000:ehci, ff5d0000:ohci, ff600000:dwc3
