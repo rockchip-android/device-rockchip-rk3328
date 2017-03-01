@@ -48,7 +48,7 @@ MALLOC_SVELTE := true
 GRAPHIC_MEMORY_PROVIDER := dma_buf
 
 //MAX-SIZE=800M, for generate out/.../system.img
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1008860800
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1208860800
 
 DEVICE_PACKAGE_OVERLAYS += device/rockchip/rk3328/overlay
 
@@ -57,7 +57,7 @@ ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),user)
     WITH_DEXPREOPT := true
   else
-    WITH_DEXPREOPT := false
+    WITH_DEXPREOPT := true
   endif
 endif
 
