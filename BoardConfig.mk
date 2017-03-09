@@ -62,3 +62,5 @@ ifeq ($(HOST_OS),linux)
 endif
 
 ENABLE_CPUSETS := true
+
+BOARD_WITH_MEM_OPTIMISE := true
