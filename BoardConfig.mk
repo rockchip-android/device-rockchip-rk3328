@@ -61,3 +61,4 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+ENABLE_CPUSETS := true
