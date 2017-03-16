@@ -57,7 +57,7 @@ ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),user)
     WITH_DEXPREOPT := true
   else
-    WITH_DEXPREOPT := true
+    WITH_DEXPREOPT := false
   endif
 endif
 
