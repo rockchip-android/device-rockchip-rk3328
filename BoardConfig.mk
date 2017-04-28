@@ -64,3 +64,5 @@ endif
 ENABLE_CPUSETS := true
 
 BOARD_WITH_MEM_OPTIMISE := true
+
+PRODUCT_HAVE_OPTEE := false
