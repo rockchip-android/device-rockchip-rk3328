@@ -48,3 +48,6 @@ ro.adb.secure =0
 sys.hwc.enable=1
 #set wifi contry code
 ro.boot.wificountrycode=CN
+#set for video optimize 
+sys.video.netBuffer=20
+sys.video.refFrameMode=1
