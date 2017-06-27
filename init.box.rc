@@ -19,3 +19,8 @@ on boot
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-3
+    chown root system /sys/class/display/HDMI/color
+    chown root system /sys/class/graphics/fb0/hdr_bt1886eotf
+    chmod 0664 /sys/class/graphics/fb0/hdr_bt1886eotf
+    chown root system /sys/class/graphics/fb0/hdr_st2084oetf
+    chmod 0664 /sys/class/graphics/fb0/hdr_st2084oetf
