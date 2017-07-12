@@ -26,3 +26,5 @@ on boot
     chmod 0664 /sys/class/graphics/fb0/hdr_bt1886eotf
     chown root system /sys/class/graphics/fb0/hdr_st2084oetf
     chmod 0664 /sys/class/graphics/fb0/hdr_st2084oetf
+    chown root system /sys/class/graphics/fb0/hdr2sdr_eetf_yn
+    chmod 0664 /sys/class/graphics/fb0/hdr2sdr_eetf_yn
