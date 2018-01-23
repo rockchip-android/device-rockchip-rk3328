@@ -50,4 +50,4 @@ sys.hwc.enable=1
 ro.boot.wificountrycode=CN
 #set for video optimize 
 sys.video.netBuffer=20
-sys.video.refFrameMode=1
+#sys.video.refFrameMode=1
